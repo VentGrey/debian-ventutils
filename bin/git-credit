@@ -1,1 +1,36 @@
 #!/usr/bin/env bash
+
+help() {
+    echo -e "Append credit to the latest commit on your current git branch"
+    echo -e "\e[35mUSAGE:\e[39m
+    git-credit \e[33m<author-name>\e[39m \e[32m<author-mail>\e[39m
+    the rest is pretty much self-explainatory.
+
+    \e[34mEXAMPLE:\e[39m
+    git-credit \"Omar Jair Purata Funes\" omarmail@email.com "
+    exit
+}
+
+valid_mail() {
+
+    regex="^[a-z0-9!#\$%&'*+/=?^_\`{|}~-]+(\.[a-z0-9!#$%&'*+/=?^_\`{|}~-]+)*@([a-z0-9]([a-z0-9-]*[a-z0-9])?\.)+[a-z0-9]([a-z0-9-]*[a-z0-9])?\$"
+    if [[ $1 =~ $regex ]]; then
+        return 0
+    else
+        return 1
+    fi
+}
+
+email=$(valid_mail "$2")
+
+if [[ "$#" != 2 ]]; then
+    echo -e "\e[31mArgument error!\e[39m"
+    help
+elif [[ $email = 0 ]]; then
+    echo -e "\e[31mYou must provide a valid email address!\e[39m"
+    help
+elif [[ $1 = "" ]]; then
+    echo -e "\e[31mYou cannot credit an empty name!\e[39m"
+fi
+
+git commit --ammend --author "$1 <$2>" -C HEAD
