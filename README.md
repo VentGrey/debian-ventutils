@@ -4,6 +4,12 @@ when I install one.
 
 These are designed to make things more bearable on Linux.
 
+## Disclaimer
+
+These files were built for my personal use so they may change or get deleted
+at some point in time. Also some of them contain swearing in them, if you don't
+like cursing, please don't use this.
+
 ## Included Files
 
 These tools are divided into categories, depending on their use. Most programs
@@ -11,8 +17,7 @@ will be placed under the `bin/` directory, however I might also add some
 submodules or small console programs I've made for simplifying the
 process of some things.
 
-## Disclaimer
+This is the current directory structure:
 
-These files were built for my personal use so they may change or get deleted
-at some point in time. Also some of them contain swearing in them, if you don't
-like cursing, please don't use this.
+```
+```
