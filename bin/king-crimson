@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+echo -e "This is \e[31m\e[1mKing Crimson's\e[0m\e[39m ability 🕜"
+echo -e "I've deleted your last commit from this git timeline! 🔃"
+
+git reset --soft HEAD^
