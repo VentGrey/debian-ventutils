@@ -3,7 +3,7 @@
 branch=$(git branch)
 
 if [[ $branch = 127 ]]; then
-    echo "This ain't a git branch >:c"
+    echo -e "\e[31mThis ain't a git branch >:c\e[39m"
 fi
 
 echo -e "Adding all unstaged programs to \e[1m\e[33m$branch\e[39m\e[0m"
