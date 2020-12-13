@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+branch=$(git branch)
+
+if [[ $branch = 127 ]]; then
+    echo "This ain't a git branch >:c"
+fi
+
+echo "Adding all unstaged programs to $branch"
+git add -A
